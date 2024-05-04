@@ -33,7 +33,7 @@ Before running the setup script, ensure you have Node.js and npm installed on yo
    
 7.Uncomment the following string in the `style.css` :
 
-   ```sh
+   ```css
    /*
    @tailwind base;
    @tailwind components;
