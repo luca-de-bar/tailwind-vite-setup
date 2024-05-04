@@ -23,20 +23,19 @@ Before running the setup script, ensure you have Node.js and npm installed on yo
 1. Download the `tailwind.ps1` script and drag it into your desired project folder (must be empty).
 2. Open your project folder in Visual Studio Code
 4. Open a terminal tab and allow the `tailwind.ps1` to execute by running the following command:
-
    ```sh
    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
 6. Run the PowerShell script `tailwind.ps1` by entering the following command:
       ```sh
    .\tailwind.ps1
 7. Remove the extra css in the `style.css` and uncomment the following string:
-
    ```css
    /*
    @tailwind base;
    @tailwind components;
    @tailwind utilities;
    */
+8. Your Vite + Tailwind setup is now complete!
 
 
 
