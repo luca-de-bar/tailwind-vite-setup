@@ -27,11 +27,9 @@ Before running the setup script, ensure you have Node.js and npm installed on yo
    ```sh
    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
 6. Run the PowerShell script `tailwind.ps1` by entering the following command:
-
-   ```sh
+      ```sh
    .\tailwind.ps1
-   
-7.Uncomment the following string in the `style.css` :
+7. Remove the extra css from in the `style.css` and uncomment the following string:
 
    ```css
    /*
@@ -39,3 +37,7 @@ Before running the setup script, ensure you have Node.js and npm installed on yo
    @tailwind components;
    @tailwind utilities;
    */
+
+
+
+   
