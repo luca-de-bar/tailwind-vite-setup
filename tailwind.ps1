@@ -21,14 +21,19 @@ Rename-Item -Path "./postcss.config.js" -NewName "postcss.config.cjs"
 
 # Configurazione di tailwind.config.js
 $tailwindConfigJs = @"
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{html,js}'],
+  content: [
+    "./index.html",
+    "./main.js",
+    // Aggiungi eventuali altri file HTML o JavaScript che utilizzano classi Tailwind CSS
+  ],
   theme: {
     extend: {},
+    // Personalizza il tema se necessario
   },
   plugins: [],
-}
+  // Aggiungi eventuali plugin aggiuntivi se necessario
+};
 "@
 $tailwindConfigJs | Out-File -FilePath "./tailwind.config.js" -Encoding utf8 -Force
 
