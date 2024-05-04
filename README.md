@@ -10,7 +10,7 @@ This project automates the setup of a Vite application integrated with Tailwind 
 - **Tailwind CSS Integration**: Tailwind CSS is set up as a PostCSS plugin, allowing for powerful utility-first CSS directly in your HTML and JS files.
 - **Configuration Files**: Automatically generates and configures `tailwind.config.js` and `postcss.config.cjs` to ensure Tailwind functions correctly with PostCSS.
 - **Prettier Configuration**: Installs and configures Prettier with a Tailwind plugin to automatically sort Tailwind classes, enhancing code readability and maintenance.
-- **Enhanced UI**: Implements a welcoming interface with an appealing hover effect on the Tailwind logo, demonstrating the use of Tailwind utility classes for quick UI development.
+- **Enhanced UI**: Implements a welcoming interface with an appealing hover effect on the Tailwind logo
 
 ## Getting Started
 
