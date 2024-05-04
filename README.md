@@ -20,7 +20,7 @@ Before running the setup script, ensure you have Node.js and npm installed on yo
 
 ### Installation
 
-1. Download the `tailwind.ps1` script and drag it into your desired project foled (must be empty).
+1. Download the `tailwind.ps1` script and drag it into your desired project folder (must be empty).
 2. Open your project folder in Visual Studio Code
 4. Open a terminal tab and allow the `tailwind.ps1` to execute by running the following command:
 
