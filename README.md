@@ -30,3 +30,5 @@ Before running the setup script, ensure you have Node.js and npm installed on yo
 
    ```sh
    .\tailwind.ps1
+   
+7.The `tailwind.ps1` eliminates automatically after running. Congrats! your Vite-Tailwind project is ready to go!
