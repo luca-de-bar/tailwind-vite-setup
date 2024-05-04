@@ -20,7 +20,10 @@ Before running the setup script, ensure you have Node.js and npm installed on yo
 
 1. Clone this repository or download the setup script directly.
 2. Open your command line interface (CLI) and navigate to the directory where you want to set up the project.
-3. Run the PowerShell script `setup.ps1` by entering the following command:
+3. Allow the `tailwind.ps1` to execute by running the following command:
+   ```sh
+   Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
+5. Run the PowerShell script `tailwind.ps1` by entering the following command:
 
    ```sh
-   .\setup.ps1
+   .\tailwind.ps1
