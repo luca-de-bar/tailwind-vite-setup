@@ -54,6 +54,11 @@ $cssFile = Get-Content -Path "./style.css" -ErrorAction SilentlyContinue
 $updatedCssFile = $cssFile -replace "f7df1e", "1eb2f7"
 $updatedCssFile | Out-File -FilePath "./style.css" -Encoding utf8 -Force
 
+# Modifica il link in main.js
+$jsFile = Get-Content -Path "./main.js" -ErrorAction SilentlyContinue
+$updatedJsFile = $jsFile -replace "https://developer.mozilla.org/en-US/docs/Web/JavaScript", "https://tailwindcss.com/docs/utility-first"
+$updatedJsFile | Out-File -FilePath "./main.js" -Encoding utf8 -Force
+
 # Installazione di prettier e prettier-plugin-tailwindcss
 npm install -D prettier prettier-plugin-tailwindcss
 
@@ -70,5 +75,8 @@ npm install
 
 # Esecuzione automatica di npm run dev
 Write-Host "Setting up your development environment..."
-Start-Sleep -Seconds 2  # Optional: Delay to allow background tasks to complete
+Start-Sleep -Seconds 3  # Optional: Delay to allow background tasks to complete
 npm run dev
+
+# Messaggio finale all'utente
+Write-Host "Your Vite and Tailwind setup is ready! The development server is running."
