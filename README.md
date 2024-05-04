@@ -29,7 +29,7 @@ Before running the setup script, ensure you have Node.js and npm installed on yo
 6. Run the PowerShell script `tailwind.ps1` by entering the following command:
       ```sh
    .\tailwind.ps1
-7. Remove the extra css from in the `style.css` and uncomment the following string:
+7. Remove the extra css in the `style.css` and uncomment the following string:
 
    ```css
    /*
