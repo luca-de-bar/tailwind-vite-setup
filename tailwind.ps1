@@ -32,11 +32,9 @@ module.exports = {
 "@
 $tailwindConfigJs | Out-File -FilePath "./tailwind.config.js" -Encoding utf8 -Force
 
-# Chiede all'utente se desidera importare le classi di stile Tailwind
-$importStyle = Read-Host "Vuoi importare le classi di stile? (S/N)"
-if ($importStyle -eq "S") {
-    $existingContent = Get-Content -Path "./style.css" -ErrorAction SilentlyContinue
-    $styleCssContent = @"
+# Importazione automatica delle classi di stile Tailwind
+$existingContent = Get-Content -Path "./style.css" -ErrorAction SilentlyContinue
+$styleCssContent = @"
 /*
 @tailwind base;
 @tailwind components;
@@ -44,13 +42,12 @@ if ($importStyle -eq "S") {
 */
 $existingContent
 "@
-    $styleCssContent | Out-File -FilePath "./style.css" -Encoding utf8 -Force
+$styleCssContent | Out-File -FilePath "./style.css" -Encoding utf8 -Force
 
-    # Download and replace the SVG file
-    $url = "https://raw.githubusercontent.com/luca-de-bar/tailwind-vite-setup/main/tailwind.svg"
-    $svgPath = "./javascript.svg"  # Since javascript.svg is in the main directory
-    Invoke-WebRequest -Uri $url -OutFile $svgPath
-}
+# Download and replace the SVG file
+$url = "https://raw.githubusercontent.com/luca-de-bar/tailwind-vite-setup/main/tailwind.svg"
+$svgPath = "./javascript.svg"  # Since javascript.svg is in the main directory
+Invoke-WebRequest -Uri $url -OutFile $svgPath
 
 # Modifica specifica del colore per .logo.vanilla:hover
 $cssFile = Get-Content -Path "./style.css" -ErrorAction SilentlyContinue
@@ -71,5 +68,7 @@ $prettierRcContent | Out-File -FilePath "./.prettierrc" -Encoding utf8 -Force
 # Installazione finale dei pacchetti npm
 npm install
 
-# Messaggio finale all'utente
-Write-Host "La configurazione è completa. Puoi eseguire 'npm run dev'."
+# Esecuzione automatica di npm run dev
+Write-Host "Setting up your development environment..."
+Start-Sleep -Seconds 2  # Optional: Delay to allow background tasks to complete
+npm run dev
