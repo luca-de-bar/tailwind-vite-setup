@@ -148,6 +148,9 @@ $prettierRcContent = @"
 "@
 $prettierRcContent | Out-File -FilePath "./.prettierrc" -Encoding utf8 -Force
 
+# Rimuovi il file javascript.svg se esiste
+Remove-Item -Path "./javascript.svg" -ErrorAction SilentlyContinue
+
 # Installazione finale dei pacchetti npm
 npm install
 
