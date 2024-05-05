@@ -129,8 +129,10 @@ $htmlContent | Out-File -FilePath "./index.html" -Encoding utf8 -Force
 
 # Download and replace the SVG file
 $url = "https://raw.githubusercontent.com/luca-de-bar/tailwind-vite-setup/main/tailwind.svg"
-$svgPath = "./tailwind.svg"  # Since javascript.svg is in the main directory
+$svgPath = "./tailwind.svg"
 Invoke-WebRequest -Uri $url -OutFile $svgPath
+Remove-Item -Path "./javascript.svg" -ErrorAction SilentlyContinue
+Move-Item -Path "./tailwind.svg" -Destination "./public/tailwind.svg"
 
 # Modifica specifica del colore per .logo.vanilla:hover
 $cssFile = Get-Content -Path "./style.css" -ErrorAction SilentlyContinue
@@ -147,9 +149,6 @@ $prettierRcContent = @"
 }
 "@
 $prettierRcContent | Out-File -FilePath "./.prettierrc" -Encoding utf8 -Force
-
-# Rimuovi il file javascript.svg se esiste
-Remove-Item -Path "./javascript.svg" -ErrorAction SilentlyContinue
 
 # Installazione finale dei pacchetti npm
 npm install
