@@ -1,6 +1,6 @@
 # Vite and Tailwind Automation Setup
 
-![Screenshot](/repo-screenshot.png)
+![Screenshot](/reposcreenshot.png)
 
 This project automates the setup of a Vite application integrated with Tailwind CSS. It is designed to streamline the process of configuring a robust development environment with Vite and Tailwind, including a PostCSS plugin setup for Tailwind.
 
