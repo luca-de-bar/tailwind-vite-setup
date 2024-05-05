@@ -102,7 +102,7 @@ $htmlContent = @"
             </a>
             <div class="text-white w-12 h-12 flex justify-center items-center text-4xl">+</div>
             <a href="https://tailwindcss.com/">
-              <img src="javascript.svg" alt="Tailwind CSS Logo" class="tailwind-logo w-[10rem] h-auto hover:shadow-lg " />
+              <img src="tailwind.svg" alt="Tailwind CSS Logo" class="tailwind-logo w-[10rem] h-auto hover:shadow-lg " />
             </a>
         </section>
         <section class="counter">
@@ -129,18 +129,13 @@ $htmlContent | Out-File -FilePath "./index.html" -Encoding utf8 -Force
 
 # Download and replace the SVG file
 $url = "https://raw.githubusercontent.com/luca-de-bar/tailwind-vite-setup/main/tailwind.svg"
-$svgPath = "./javascript.svg"  # Since javascript.svg is in the main directory
+$svgPath = "./tailwind.svg"  # Since javascript.svg is in the main directory
 Invoke-WebRequest -Uri $url -OutFile $svgPath
 
 # Modifica specifica del colore per .logo.vanilla:hover
 $cssFile = Get-Content -Path "./style.css" -ErrorAction SilentlyContinue
 $updatedCssFile = $cssFile -replace "f7df1e", "1eb2f7"
 $updatedCssFile | Out-File -FilePath "./style.css" -Encoding utf8 -Force
-
-# Modifica il link in main.js
-$jsFile = Get-Content -Path "./main.js" -ErrorAction SilentlyContinue
-$updatedJsFile = $jsFile -replace "https://developer.mozilla.org/en-US/docs/Web/JavaScript", "https://tailwindcss.com/docs/utility-first"
-$updatedJsFile | Out-File -FilePath "./main.js" -Encoding utf8 -Force
 
 # Installazione di prettier e prettier-plugin-tailwindcss
 npm install -D prettier prettier-plugin-tailwindcss
