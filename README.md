@@ -31,7 +31,8 @@ Before running the setup script, ensure you have Node.js and npm installed on yo
       ```sh
    .\tailwind.ps1
       
-7. Your Vite + Tailwind setup is now complete!
+7. Choose to remove any existing files and continue
+8. Your Vite + Tailwind setup is now complete!
 
 
 
